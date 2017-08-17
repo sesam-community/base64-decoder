@@ -18,6 +18,22 @@ The service listens on port 5001.
 
 JSON entities can be posted to 'http://localhost:5001/transform'. The result is streamed back to the client.
 
+Example config:
+
+::
+
+  {
+    "_id": "my-decoder",
+    "type": "system:microservice",
+    "docker": {
+      "environment": {
+        "SOURCE_PROPERTY": "content",
+        "TARGET_PROPERTY": "content_decoded"
+      },
+      "image": "sesamcommunity/sesam-base64-decoder",
+      "port": 5001
+    }
+  }
 
 Examples:
 
